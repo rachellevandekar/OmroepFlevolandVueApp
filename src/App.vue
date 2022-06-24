@@ -1,10 +1,28 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <button id="back-btn" @click="back"> 🡠 </button>
+    <router-link to="/">Stories</router-link> |
+    <router-link to="/meldingen">Meldingen</router-link>
+
   </nav>
+
+  
   <router-view/>
 </template>
+
+<script>
+export default {
+  methods: {
+    back(){
+      this.$router.go(-1)
+    }
+  }
+ 
+}
+</script>
+
+
+
 
 <style>
 #app {
@@ -22,9 +40,23 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
+
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+#back-btn{
+  background:none;
+  color: black ;
+  
+}
+
+#back-btn:hover{
+  background:none;
+  color: green ;
+  
 }
 </style>
